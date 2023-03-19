@@ -6,7 +6,7 @@ interface Props {
   color: string;
 }
 
-const Button = ({ children, color }: Props) => {
+const Button = ({ children, color, onClick }: Props) => {
   return (
     <button className={`btn btn-${color}`} onClick={onClick}>
       {children}
