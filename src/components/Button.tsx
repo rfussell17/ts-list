@@ -2,11 +2,16 @@ import { ReactNode } from "react";
 
 interface Props {
   children: ReactNode;
+  onClick: () => void;
   color: string;
 }
 
 const Button = ({ children, color }: Props) => {
-  return <button className={`btn btn-${color}`}>{children}</button>;
+  return (
+    <button className={`btn btn-${color}`} onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;

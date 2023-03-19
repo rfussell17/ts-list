@@ -23,7 +23,9 @@ function App() {
           <strong>World</strong>
         </span>
       </Alert>
-      <Button color="danger">Primary</Button>
+      <Button color="primary" onClick={() => console.log("clicked")}>
+        Primary
+      </Button>
     </div>
   );
 }
