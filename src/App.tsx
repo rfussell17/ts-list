@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
@@ -5,8 +6,15 @@ import ListGroup from "./components/ListGroup";
 
 function App() {
   let items = ["New York", "New Jersey", "California", "Texas", "Florida"];
+
+  const [showAlert, setShowAlert] = useState(false);
+
   const handleSelectItem = (item: string) => {
     console.log(item);
+  };
+
+  const handleAlert = () => {
+    console.log("alert");
   };
 
   return (
@@ -17,13 +25,8 @@ function App() {
         onSelectItem={handleSelectItem}
       />
       <br></br>
-      <Alert>
-        Hello{" "}
-        <span>
-          <strong>World</strong>
-        </span>
-      </Alert>
-      <Button color="primary" onClick={() => console.log("clicked")}>
+      {showAlert && <Alert onClose={() => setShowAlert(false)}>Alert</Alert>}
+      <Button color="primary" onClick={() => setShowAlert(true)}>
         Primary
       </Button>
     </div>
